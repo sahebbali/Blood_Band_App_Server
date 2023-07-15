@@ -25,7 +25,7 @@ app.use(morgan("dev"));
 
 
 // Home page route.
-router.get("/", function (req, res) {
+app.use("/", function (req, res) {
   res.send("Wellcome to home page");
 });
 
