@@ -25,15 +25,16 @@ app.use(morgan("dev"));
 
 
 // Home page route.
-app.use("/", function (req, res) {
-  res.send("Wellcome to home page");
-});
 
 app.use("/api/v1/test", require("./routes/testRoutes"));
 app.use("/api/v1/auth", require("./routes/authRoutes"));
 app.use("/api/v1/inventory", require("./routes/inventoryRoutes"));
 app.use("/api/v1/analytics", require("./routes/analyticsRoutes"));
 app.use("/api/v1/admin", require("./routes/adminRoutes"));
+
+app.use("/", function (req, res) {
+  res.send("Wellcome to home page");
+});
 
 //port
 const PORT = process.env.PORT || 8080;
