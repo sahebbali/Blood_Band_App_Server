@@ -4,6 +4,8 @@ const colors = require("colors");
 const morgan = require("morgan");
 const cors = require("cors");
 const connectDB = require("./config/db");
+
+const router = express.Router();
 //dot config
 dotenv.config();
 
@@ -20,6 +22,13 @@ app.use(morgan("dev"));
 
 //routes
 // 1 test route
+
+
+// Home page route.
+router.get("/", function (req, res) {
+  res.send("Wellcome to home page");
+});
+
 app.use("/api/v1/test", require("./routes/testRoutes"));
 app.use("/api/v1/auth", require("./routes/authRoutes"));
 app.use("/api/v1/inventory", require("./routes/inventoryRoutes"));
